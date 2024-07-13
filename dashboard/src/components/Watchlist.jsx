@@ -12,13 +12,13 @@ const Watchlist = () => {
   let [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = (id, index) => {
-    if(watchlist[index].id === id){
-      setIsHovering(true);
-      console.log(id)
-    } else{
-      setIsHovering(false);
-      console.log("Working")
-    }
+    setIsHovering(() => {
+      if(watchlist[index].id === id){
+        return (true);
+      } else{
+        return (false);
+      }
+    })
   };
 
   const handleMouseOut = () => {
@@ -46,8 +46,8 @@ const Watchlist = () => {
               <div className='innerMostWatchlistDiv3' style={isHovering ? {} : {display: "none"}}>
                 <button style={{backgroundColor: "#0070ff", color: "white"}}><a data-tooltip-id="my-tooltip-1" data-tooltip-content="Buy (B)">Buy</a></button>
                 <button style={{backgroundColor: "#ff4600", color: "white"}}><a data-tooltip-id="my-tooltip-1" data-tooltip-content="Sell (S)">Sell</a></button>
-                <button style={{backgroundColor: "white", color: "gray", border: "0.5px solid gray"}}><a data-tooltip-id="my-tooltip-2" data-tooltip-content="Analytics (A)"><BarChartIcon /></a></button>
-                <button style={{backgroundColor: "white", color: "gray", border: "0.5px solid gray"}}><a data-tooltip-id="my-tooltip-1" data-tooltip-content="More"><MoreHorizIcon /></a></button>
+                <button style={{backgroundColor: "white", color: "gray", border: "0.5px solid gray"}}><a data-tooltip-id="my-tooltip-2" data-tooltip-content="Analytics (A)"><BarChartIcon style={{display: "flex"}}/></a></button>
+                <button style={{backgroundColor: "white", color: "gray", border: "0.5px solid gray"}}><a data-tooltip-id="my-tooltip-1" data-tooltip-content="More"><MoreHorizIcon style={{display: "flex"}}/></a></button>
                 <Tooltip id="my-tooltip-1" style={{height: "0.25rem", display: "flex", alignItems: "center", width: "2.2rem", fontSize: "0.7rem", backgroundColor: "gray", textAlign: "center"}}/>
                 <Tooltip id='my-tooltip-2' style={{height: "0.25rem", display: "flex", alignItems: "center", width: "4rem", fontSize: "0.7rem", backgroundColor: "gray", textAlign: "center"}}/> 
               </div>

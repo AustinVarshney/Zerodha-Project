@@ -71,6 +71,9 @@
     border-radius: 0.35rem;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .outerWatchlistDiv2::-webkit-scrollbar{
