@@ -36,7 +36,7 @@
 }
 
 .innerMostSummaryDiv2 div:last-child{
-    border-left: 1px solid gray;
+    border-left: 1px solid #d4cfcf;
     width: 40%;
     padding-left: 2rem;
 }
@@ -90,7 +90,7 @@
 }
 
 .innerMostSummaryDiv4 div:last-child{
-    border-left: 1px solid gray;
+    border-left: 1px solid #d4cfcf;
     width: 40%;
     padding-left: 2rem;
 }
