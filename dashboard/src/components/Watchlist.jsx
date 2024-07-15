@@ -24,7 +24,7 @@ const Watchlist = () => {
       <div className="innerWatchlistDiv1">
         <SearchIcon style={{ color: "#616161" }} />
         <input type="text" placeholder="Search eg: infy, bse, nifty fut, nifty weekly, gold mcx"/>
-        <p>9/20</p>
+        <p>{watchlist.length}/20</p>
       </div>
       <div className="outerWatchlistDiv2">
         {watchlist.map((item, index) => (

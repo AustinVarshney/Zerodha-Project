@@ -52,7 +52,7 @@ body::-webkit-scrollbar{
 
 .innerMostHomeDiv2, .innerMostHomeDiv4{
     width: 100%;
-    height: calc(100% - 75px);
+    height: calc(100% - 78px);
     /* border: 1px solid yellow; */
 }
 

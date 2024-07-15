@@ -24,6 +24,11 @@
     background-color: rgb(69, 69, 244);
     border-radius: 0.25rem;
     cursor: pointer;
+    border: 1px solid blue;
+}
+
+.outerOrderDiv button:hover{
+    background-color: rgba(69, 69, 244, 0.86);
 }
 
 .outerOrderDiv button a{
