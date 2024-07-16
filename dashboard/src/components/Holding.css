@@ -22,7 +22,7 @@
     color: #444444;
 }
 
-table{
+.holding{
     border-collapse: collapse;
     margin-top: 1.5rem;
     width: 100%;
@@ -34,78 +34,78 @@ tr{
     border-bottom: 1px solid rgb(233, 231, 231);
 }
 
-table tr:last-child{
+.holding tr:last-child{
     border-bottom: 0;
 }
-table tr:first-child{
+.holding tr:first-child{
     border-top: 0;
     border-bottom: 1px solid rgb(233, 231, 231);
 }
 
-table tr th{
+.holding tr th{
     font-size: 14px;
     color: #9B9B9B;
     font-weight: 400;
     padding: 0.5rem;
 }
 
-table tr th:hover{
+.holding tr th:hover{
     background-color: rgb(234, 234, 234);
     cursor: pointer;
 }
 
-table tr td{
+.holding tr td{
     padding: 0.5rem;
     font-size: 1rem;
     color: #444444;
 }
 
-.th1, .td1{
+.holding tr .th1, .holding tr .td1{
     width: 20%;
     text-align: left;
     border-right: 1px solid rgb(233, 231, 231);
 }
 
-.th2, .td2{
+.holding tr .th2, .holding tr .td2{
     width: 10%;
     text-align: center;
 }
 
-.th3, .td3{
+.holding tr .th3, .holding tr .td3{
     width: 15%;
     text-align: center;
 }
 
-.th4, .td4{
+.holding tr .th4, .holding tr .td4{
     width: 10%;
     text-align: right;
     border-right: 1px solid rgb(233, 231, 231);
 }
 
-.th5, .td5{
+.holding tr .th5, .holding tr .td5{
     width: 15%;
     text-align: right;
 }
 
-.th6, .td6{
+.holding tr .th6, .holding tr .td6{
     width: 10%;
     text-align: right;
 }
 
-.td7{
+.holding tr .td7{
     font-size: 14px;
 }
 
-.th7, .td7{
+.holding tr .th7, .holding tr .td7{
     width: 10%;
     text-align: right;
 }
 
-.td8{
+.holding tr .td8{
     font-size: 12px;
 }
 
-.th8, .td8{
+.holding tr .th8, .holding tr .td8{
     width: 10%;
     text-align: right;
 }

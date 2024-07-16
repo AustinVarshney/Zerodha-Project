@@ -1,0 +1,106 @@
+.outerPositionDiv{
+    padding: 2rem;
+    padding-bottom: 0;
+    overflow: scroll;
+    height: calc(100% - 30px);
+}
+
+.outerPositionDiv::-webkit-scrollbar{
+    height: 100%;
+    width: 6px;
+    background-color: #eeeeeedf;
+    border-radius: 1.5rem;
+}
+
+.outerPositionDiv::-webkit-scrollbar-thumb {
+    border-radius: 1.5rem;
+    background: rgb(198, 196, 196);
+}
+
+.position{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.outerPositionDiv p{
+    font-size: 1.25rem;
+    color: #444444;
+}
+
+.position tr{
+    height: 1.8rem;
+}
+
+/* .position tr th, .position tr td{
+    border: 1px solid black;
+} */
+
+.position tr th{
+    font-size: 14px;
+    color: #9B9B9B;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+.position tr td{
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #444444;
+}
+
+.position tr .th1{
+    width: 10%;
+    text-align: left;
+}
+
+.position tr .td1{
+    width: 10%;
+    text-align: center;
+    padding: 0.5rem;
+    color: #D9863D;
+}
+
+.position tr .td1 div{
+    background-color: #D9863D1A;
+}
+
+.position tr .th2, .position tr .td2{
+    width: 30%;
+    text-align: center;
+}
+
+.position tr .th3, .position tr .td3{
+    width: 10%;
+    text-align: center;
+}
+
+.position tr .th4, .position tr .td4{
+    width: 15%;
+    text-align: right;
+}
+
+.position tr .th5, .position tr .td5{
+    width: 15%;
+    text-align: right;
+}
+
+.position tr .th6, .position tr .td6{
+    width: 10%;
+    text-align: right;
+    font-size: 14px;
+}
+
+.position tr .th7, .position tr .td7{
+    width: 10%;
+    text-align: right;
+    font-size: 12px;
+}
+
+.position thead tr{
+    border-top: none;
+}
+
+.position tbody tr:last-child{
+    border-bottom: none;
+}

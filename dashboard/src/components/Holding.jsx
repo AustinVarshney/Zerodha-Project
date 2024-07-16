@@ -6,7 +6,7 @@ const Holding = () => {
   return (
     <div className='outerHoldingDiv'>
       <p>Holdings ({holdings.length})</p>
-      <table>
+      <table className='holding'>
         <thead>
           <tr>
             <th className='th1'>Instrument</th>
@@ -21,7 +21,7 @@ const Holding = () => {
         </thead>
         <tbody>
           {holdings.map((holding, index) => (
-              <tr>
+              <tr key={index}>
                 <td className='td1'>{holding.name}</td>
                 <td className='td2'>{holding.qty}</td>
                 <td className='td3'>{holding.avg.toFixed(2)}</td>
