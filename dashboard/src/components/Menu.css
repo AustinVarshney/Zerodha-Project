@@ -59,8 +59,15 @@
 
 .innerMenuDiv2 ul li a{
     text-decoration: none;
-    color: #444444;
     font-size: 14px;
+}
+
+.menu{
+    color: #444444;
+}
+
+.selected-menu{
+    color: #FF5722;   
 }
 
 .innerMenuDiv2 ul li a:hover{
