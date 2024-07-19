@@ -23,7 +23,7 @@
     margin-top: 1.5rem;
 }
 
-.outerPositionDiv p{
+.outerPositionDiv>p{
     font-size: 1.25rem;
     color: #444444;
 }
@@ -103,4 +103,98 @@
 
 .position tbody tr:last-child{
     border-bottom: none;
+}
+
+.positionDiv{
+    border-top: 1px solid #e7e7e7;
+    margin-top: 2rem;
+    display: none;
+}
+
+.positionOuterDiv{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.positionOuterDiv:first-child{
+    padding-top: 0.5rem;
+}
+
+.positionOuterDiv:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.positionOuterDiv>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.positionInnerDiv1{
+    margin-bottom: 1rem;
+}
+
+.positionInnerDiv1>p:first-child>span{
+    color: #c5c5c5;
+    font-size: 1rem;
+}
+
+.positionInnerDiv2{
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.positionInnerDiv2>p{
+    font-size: 1rem;
+    color: #444444;
+}
+
+.positionPara2>span{
+    font-size: 10px;
+}
+
+.positionPara4{
+    position: absolute;
+    left: calc(45% - 5px);
+}
+
+.positionPara5>span{
+    font-size: 12px;
+}
+
+.positionInnerDiv3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.positionPara6{
+    font-size: 1rem;
+    color: #adadad;
+    position: absolute;
+    top: 0;
+    left: calc(45% - 5px);
+    margin-top: 0.5rem;
+}
+
+.positionPara7{
+    position: absolute;
+    left: calc(45% - 5px);
+    top: 1rem;
+    margin-top: 1rem;
+}
+
+@media(max-width:620px){
+    .position{
+        display: none;
+    }
+    .positionDiv{
+        display: inherit;
+    }
 }

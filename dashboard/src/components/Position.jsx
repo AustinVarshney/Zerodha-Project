@@ -43,6 +43,25 @@ const Position = () => {
           </tr>
         </tbody>
       </table>
+      <div className='positionDiv'>
+          {positions.map((stock, index) => (
+            <div key={index} className='positionOuterDiv'>
+              <div className='positionInnerDiv1'>
+                <p className='positionPara1'><span>Qty.</span> {stock.qty}</p>
+                <p className='positionPara2'><span>LTP</span> {stock.price.toFixed(2)}</p>
+              </div>
+              <div className='positionInnerDiv2'>
+                <p className='positionPara3'>{stock.name}</p>
+                <p className='positionPara4'>&#8377;{stock.avg.toFixed(2)}</p>
+                <p className='positionPara5'><span style={stock.net[0] == "+" ? {color: "#67C988"} : {color: "#DF4949"}}>{stock.net}</span> {(stock.qty*stock.price - stock.avg*stock.qty).toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
+          <div className='positionInnerDiv3'>
+            <p className='positionPara6'>Total P/L</p>
+            <p className='positionPara7'>49.94</p>
+          </div>
+      </div>
     </div>
   )
 }

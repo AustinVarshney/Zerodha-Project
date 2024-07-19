@@ -34,6 +34,21 @@ const Holding = () => {
           ))}
         </tbody>
       </table>
+      <div className='holdingDiv'>
+          {holdings.map((holding, index) => (
+            <div key={index} className='holdingOuterDiv'>
+              <div className='holdingInnerDiv1'>
+                <p className='holdingPara1'><span>Qty.</span> {holding.qty}</p>
+                <p className='holdingPara2'><span>LTP</span> {holding.price.toFixed(2)}</p>
+              </div>
+              <div className='holdingInnerDiv2'>
+                <p className='holdingPara3'>{holding.name}</p>
+                <p className='holdingPara4'>&#8377;{holding.avg.toFixed(2)}</p>
+                <p className='holdingPara5'><span style={holding.net[0] == "+" ? {color: "#67C988"} : {color: "#DF4949"}}>{holding.net}</span> {(holding.qty*holding.price - holding.avg*holding.qty).toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
+      </div>
       <div className='innerHoldingDiv1'>
         <div className='innerMostHoldingDiv1'>
           <p>29,875<span>.55</span></p>

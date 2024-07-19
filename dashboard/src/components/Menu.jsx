@@ -2,10 +2,29 @@ import React, { useState } from 'react'
 import "./Menu.css"
 import logoImg from "../../src/assets/logo.png"
 import { Link, useLocation } from "react-router-dom"
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
+import TollIcon from '@mui/icons-material/Toll';
+import SupportIcon from '@mui/icons-material/Support';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import ExploreIcon from '@mui/icons-material/Explore';
+import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Menu = () => {
   let location = useLocation();
   let [activeMenu, setActiveMenu] = useState(0);
+  let [isDropDownMenu, setIsDropDownMenu] = useState(false);
+  let [isSmallDropDownMenu, setIsSmallDropDownMenu] = useState(false);
+
+  let dropDownMenu = () => {
+    setIsDropDownMenu(!isDropDownMenu);
+  }
+
+  let smallDropDownMenu = () => {
+    setIsSmallDropDownMenu(!isSmallDropDownMenu);
+  }
 
   // Update active state based on pathname
   React.useEffect(() => {
@@ -50,14 +69,54 @@ const Menu = () => {
           <li><Link to="/positions" className={activeMenu===3 ? selectedMenu : menu}>Positions</Link></li>
           <li><Link to="/funds" className={activeMenu===4 ? selectedMenu : menu}>Funds</Link></li>
           <li><Link to="/apps" className={activeMenu===5 ? selectedMenu : menu}>Apps</Link></li>
-          <li><a>
+          <li><Link onClick={dropDownMenu}>
             <div>
               ZU
             </div>
             <p>USERID</p>
-          </a></li>
+          </Link></li>
         </ul>
+        <div className='innerMostMenuDiv1' style={isDropDownMenu ? {} : {display: "none"}}>
+          <ul>
+            <li><Link><PersonOutlineIcon style={{fontSize: "1.2rem"}}/>My Profile</Link></li>
+            <li><Link><PhotoCameraFrontIcon style={{fontSize: "1.2rem"}}/>Console</Link></li>
+            <li><Link><TollIcon style={{fontSize: "1.2rem"}}/>Coin</Link></li>
+            <li><Link><SupportIcon style={{fontSize: "1.2rem"}}/>Support</Link></li>
+            <li><Link><PersonAddAltIcon style={{fontSize: "1.2rem"}}/>Invite Friends</Link></li>
+            <li><Link><ExploreIcon style={{fontSize: "1.2rem"}}/>Tour Kite</Link></li>
+            <li><Link><KeyboardCommandKeyIcon style={{fontSize: "1.2rem"}}/>Keyboard shortcuts</Link></li>
+            <li><Link><LiveHelpIcon style={{fontSize: "1.2rem"}}/>User manual</Link></li>
+            <li><Link><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
+          </ul>
+        </div>
       </div>
+      <div className='innerMenuDiv3'>
+          <ul>
+            <li><Link onClick={smallDropDownMenu}>
+              <div>ZU</div>
+              <p>USERID</p>
+            </Link></li>
+          </ul>
+          <div className='innerMostMenuDiv2' style={isSmallDropDownMenu ? {} : {display: "none"}}>
+            <div><Link to="/" style={activeMenu===0 ? {color: "#FF5722"} : {color: "#444444"}}>Dashboard</Link></div>
+            <div><Link to="/orders" style={activeMenu===1 ? {color: "#FF5722"} : {color: "#444444"}}>Orders</Link></div>
+            <div><Link to="/holdings" style={activeMenu===2 ? {color: "#FF5722"} : {color: "#444444"}}>Holdings</Link></div>
+            <div><Link to="/positions" style={activeMenu===3 ? {color: "#FF5722"} : {color: "#444444"}}>Positions</Link></div>
+            <div><Link to="/funds" style={activeMenu===4 ? {color: "#FF5722"} : {color: "#444444"}}>Funds</Link></div>
+            <div><Link to="/apps" style={activeMenu===5 ? {color: "#FF5722"} : {color: "#444444"}}>Apps</Link></div>
+            <ul>
+              <li><Link><PersonOutlineIcon style={{fontSize: "1.2rem"}}/>My Profile</Link></li>
+              <li><Link><PhotoCameraFrontIcon style={{fontSize: "1.2rem"}}/>Console</Link></li>
+              <li><Link><TollIcon style={{fontSize: "1.2rem"}}/>Coin</Link></li>
+              <li><Link><SupportIcon style={{fontSize: "1.2rem"}}/>Support</Link></li>
+              <li><Link><PersonAddAltIcon style={{fontSize: "1.2rem"}}/>Invite Friends</Link></li>
+              <li><Link><ExploreIcon style={{fontSize: "1.2rem"}}/>Tour Kite</Link></li>
+              <li><Link><KeyboardCommandKeyIcon style={{fontSize: "1.2rem"}}/>Keyboard shortcuts</Link></li>
+              <li><Link><LiveHelpIcon style={{fontSize: "1.2rem"}}/>User manual</Link></li>
+              <li><Link><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
+            </ul>
+          </div>
+        </div>
     </div>
   )
 }
