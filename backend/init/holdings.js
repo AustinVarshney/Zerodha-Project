@@ -1,16 +1,20 @@
+require('dotenv').config()
+
 const mongoose = require("mongoose");
 const Holding = require("../models/holdings.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/zerodha";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/zerodha";
+const DB_URL = process.env.MONGODB_URL;
 
 main()
-.then(() => {
-    console.log("DB is connected");
-})
-.catch(err => console.log(err));
+    .then(() => {
+        console.log("DB is connected");
+        console.log("Holdings.js run")
+    })
+    .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+    await mongoose.connect(DB_URL);
 }
 
 const allHoldings = [

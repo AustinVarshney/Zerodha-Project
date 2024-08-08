@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -20,7 +22,8 @@ app.use(cors({
     credentials: true,
 }));
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/zerodha";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/zerodha";
+const DB_URL = process.env.MONGODB_URL;
 
 main()
     .then(() => {
@@ -29,7 +32,7 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(DB_URL);
 }
 
 const sessionOptions = {
