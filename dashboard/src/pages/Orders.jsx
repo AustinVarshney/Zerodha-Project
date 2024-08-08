@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Orders = () => {
   useEffect(() => {
-    axios.get("http://localhost:8080/").then((res) => {
+    axios.get("https://zerodha-project-backend.onrender.com/").then((res) => {
       // console.log(res);
     })
   }, [])

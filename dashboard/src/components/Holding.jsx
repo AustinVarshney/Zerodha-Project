@@ -42,7 +42,7 @@ const Holding = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/allHoldings").then((res) => {
+    axios.get("https://zerodha-project-backend.onrender.com/allHoldings").then((res) => {
       setAllHoldings(res.data);
     })
   }, [])

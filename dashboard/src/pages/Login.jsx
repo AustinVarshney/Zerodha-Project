@@ -20,7 +20,7 @@ const Login = () => {
         event.preventDefault();
     };
 
-    fetch('http://localhost:8080/login', {
+    fetch('https://zerodha-project-backend.onrender.com/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div className='outerLoginDiv'>
-            <form action="http://localhost:8080/login" method='POST'>
+            <form action="https://zerodha-project-backend.onrender.com/login" method='POST'>
                 <div className='innerLoginDiv1'>
                     <img src={logoImg} alt="" />
                     <p>Login to Kite</p>
