@@ -6,6 +6,7 @@ import Holdings from './pages/Holdings'
 import Positions from './pages/Positions'
 import Funds from './pages/Funds'
 import Apps from './pages/Apps'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/positions' element={<Positions/>}/>
         <Route path='/funds' element={<Funds/>}/>
         <Route path='/apps' element={<Apps/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </div>
   )

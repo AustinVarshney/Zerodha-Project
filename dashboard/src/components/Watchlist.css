@@ -1,5 +1,18 @@
 .outerWatchlistDiv1{
     height: 100%;
+    overflow: scroll;
+}
+
+.outerWatchlistDiv1::-webkit-scrollbar{
+    height: 100%;
+    width: 6px;
+    background-color: #eeeeeedf;
+    border-radius: 1.5rem;
+}
+
+.outerWatchlistDiv1::-webkit-scrollbar-thumb {
+    border-radius: 1.5rem;
+    background: rgb(198, 196, 196);
 }
 
 .innerWatchlistDiv1{

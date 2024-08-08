@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Position.css"
-import { positions } from '../assets/assets'
+// import { positions } from '../assets/assets'
+
+import axios from 'axios';
 
 const Position = () => {
+  let [allPositions, setAllPositions] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/allPositions").then((res) => {
+      // console.log(res);
+      setAllPositions(res.data);
+    })
+  }, [])
+
   return (
     <div className='outerPositionDiv'>
-      <p>Positions ({positions.length})</p>
+      <p>Positions ({allPositions.length})</p>
       <table className='position'>
         <thead>
           <tr>
@@ -19,7 +30,7 @@ const Position = () => {
           </tr>
         </thead>
         <tbody>
-          {positions.map((stock, index)=> {
+          {allPositions.map((stock, index)=> {
               return (
                 <tr key={index}>
                   <td className='td1'><div>{stock.product}</div></td>
@@ -44,7 +55,7 @@ const Position = () => {
         </tbody>
       </table>
       <div className='positionDiv'>
-          {positions.map((stock, index) => (
+          {allPositions.map((stock, index) => (
             <div key={index} className='positionOuterDiv'>
               <div className='positionInnerDiv1'>
                 <p className='positionPara1'><span>Qty.</span> {stock.qty}</p>

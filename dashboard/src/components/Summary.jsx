@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Summary.css"
 
-const Summary = () => {
+
+const Summary = ({user}) => {
+
   return (
     <div className='outerSummaryDiv'>
       <div className='innerSummaryDiv1'>
-        <p>Hi, User!</p>
+        <p>Hi, {user}!</p>
       </div>
       <div className='innerSummaryDiv2'>
         <div className='innerMostSummaryDiv1'>

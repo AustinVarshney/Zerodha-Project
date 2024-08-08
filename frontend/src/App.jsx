@@ -7,6 +7,7 @@ import Products from "./Pages/Products/Products"
 import Pricing from "./Pages/Pricing/Pricing"
 import Support from "./Pages/Support/Support"
 import Footer from "./Components/Footer/Footer"
+import Login from "./Pages/Login/Login"
 
 function App() {
 

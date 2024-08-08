@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Topbar from '../components/Topbar'
 import Menu from '../components/Menu'
 import Watchlist from '../components/Watchlist'
 import Order from '../components/Order'
+import axios from 'axios';
 
 const Orders = () => {
+  useEffect(() => {
+    axios.get("http://localhost:8080/").then((res) => {
+      // console.log(res);
+    })
+  }, [])
+
   return (
     <div className='outerHomeDiv'>
       <div className='innerHomeDiv1'>

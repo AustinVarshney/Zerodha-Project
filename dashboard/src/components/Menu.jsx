@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Menu.css"
 import logoImg from "../../src/assets/logo.png"
 import { Link, useLocation } from "react-router-dom"
@@ -11,8 +11,20 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import LogoutIcon from '@mui/icons-material/Logout';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const Menu = () => {
+  let [user, setUser] = useState("User");
+
+  useEffect(() => {
+    const userName = Cookies.get('user');
+    if (userName) {
+      setUser(userName || "User");
+    }
+  }, []);
+
+
   let location = useLocation();
   let [activeMenu, setActiveMenu] = useState(0);
   let [isDropDownMenu, setIsDropDownMenu] = useState(false);
@@ -56,6 +68,11 @@ const Menu = () => {
   const menu = "menu";
   const selectedMenu = "selected-menu";
 
+  useEffect(() => {
+    axios.get("http://localhost:8080/").then((res) => {
+    })
+  }, [])
+
   return (
     <div className='outerMenuDiv'>
       <div className='innerMenuDiv1'>
@@ -71,7 +88,7 @@ const Menu = () => {
           <li><Link to="/apps" className={activeMenu===5 ? selectedMenu : menu}>Apps</Link></li>
           <li><Link onClick={dropDownMenu}>
             <div>
-              ZU
+              {user.length > 1 ? user[0].toUpperCase()+user[1].toUpperCase() : user[0].toUpperCase()}
             </div>
             <p>USERID</p>
           </Link></li>
@@ -86,14 +103,14 @@ const Menu = () => {
             <li><Link><ExploreIcon style={{fontSize: "1.2rem"}}/>Tour Kite</Link></li>
             <li><Link><KeyboardCommandKeyIcon style={{fontSize: "1.2rem"}}/>Keyboard shortcuts</Link></li>
             <li><Link><LiveHelpIcon style={{fontSize: "1.2rem"}}/>User manual</Link></li>
-            <li><Link><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
+            <li><Link to="http://localhost:8080/logout"><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
           </ul>
         </div>
       </div>
       <div className='innerMenuDiv3'>
           <ul>
             <li><Link onClick={smallDropDownMenu}>
-              <div>ZU</div>
+              <div>{user.length > 1 ? user[0].toUpperCase()+user[1].toUpperCase() : user[0].toUpperCase()}</div>
               <p>USERID</p>
             </Link></li>
           </ul>
@@ -113,7 +130,7 @@ const Menu = () => {
               <li><Link><ExploreIcon style={{fontSize: "1.2rem"}}/>Tour Kite</Link></li>
               <li><Link><KeyboardCommandKeyIcon style={{fontSize: "1.2rem"}}/>Keyboard shortcuts</Link></li>
               <li><Link><LiveHelpIcon style={{fontSize: "1.2rem"}}/>User manual</Link></li>
-              <li><Link><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
+              <li><Link to="http://localhost:8080/logout"><LogoutIcon style={{fontSize: "1.2rem"}}/>Logout</Link></li>
             </ul>
           </div>
         </div>

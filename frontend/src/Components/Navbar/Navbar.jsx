@@ -6,6 +6,7 @@ import kiteConnect from "../../assets/kite-connect.svg"
 import coin from "../../assets/coin.svg"
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     let [showSidebar1, setShowSidebar1] = useState(true);
@@ -44,24 +45,32 @@ export default function Navbar() {
             <div className="outerNav2" style={showSidebar1 ? { display: "none" } : {}}>
                 <div className="innerNav4">
                     <div>
-                        <img src={kiteLogo} />
-                        <h4>Kite</h4>
-                        <p>Trading Platform</p>
+                        <Link to="http://localhost:5173/login">
+                            <img src={kiteLogo} />
+                            <h4>Kite</h4>
+                            <p>Trading Platform</p>
+                        </Link>
                     </div>
                     <div>
-                        <img src={consoleLog} />
-                        <h4>Console</h4>
-                        <p>Backoffice</p>
+                        <Link>
+                            <img src={consoleLog} />
+                            <h4>Console</h4>
+                            <p>Backoffice</p>
+                        </Link>
                     </div>
                     <div>
-                        <img src={kiteConnect} />
-                        <h4>Kite Connect</h4>
-                        <p>Trading APIs</p>
+                        <Link>
+                            <img src={kiteConnect} />
+                            <h4>Kite Connect</h4>
+                            <p>Trading APIs</p>
+                        </Link>
                     </div>
                     <div>
-                        <img src={coin} />
-                        <h4>Coin</h4>
-                        <p>Mutual funds</p>
+                        <Link>
+                            <img src={coin} />
+                            <h4>Coin</h4>
+                            <p>Mutual funds</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="innerNav5">
@@ -99,7 +108,7 @@ export default function Navbar() {
                 </div>
                 <div className="innerNav7">
                     <div>
-                        <p><a href="/"><img src={kiteLogo} />Kite</a></p>
+                        <p><Link to="http://localhost:5173/login"><img src={kiteLogo} />Kite</Link></p>
                         <p><a href="/"><img src={kiteConnect} />Kite Connect</a></p>
                     </div>
                     <div>
