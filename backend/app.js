@@ -48,7 +48,7 @@ const sessionOptions = {
     }
 };
 
-app.use(cookieParser("mysupersecretstring"));
+app.use(cookieParser(process.env.SECRET));
 
 app.use(session(sessionOptions));
 
