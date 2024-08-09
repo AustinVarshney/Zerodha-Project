@@ -87,11 +87,11 @@ app.post("/signup", async (req, res) => {
     const registeredUser = await User.register(newUser, password);
     console.log(registeredUser);
     res.cookie("user", username);
-    res.redirect("http://localhost:5173/");
+    res.redirect("https://zerodha-project-dashboard.vercel.app/");
 })
 
 app.get("/login", (req, res) => {
-    res.redirect("http://localhost:5173/login");
+    res.redirect("https://zerodha-project-dashboard.vercel.app/login");
 })
 
 app.post("/login", passport.authenticate('local', { failureRedirect: '/login' }), wrapAsync(async (req, res) => {
@@ -109,7 +109,7 @@ app.post("/login", passport.authenticate('local', { failureRedirect: '/login' })
 
         let userData = req.user.username || "Guest";
         res.cookie("user", userData, {signedCookie: true});
-        res.redirect('http://localhost:5173/');
+        res.redirect('https://zerodha-project-dashboard.vercel.app/');
     }
 }));
 
@@ -119,7 +119,7 @@ app.get("/logout", (req, res) => {
         if (err) {
             return next(err);
         }
-        res.redirect("http://localhost:5174/");
+        res.redirect("https://zerodha-project-frontend.vercel.app/");
     })
 });
 
