@@ -9,7 +9,6 @@ const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const Cookies = require('js-cookie');
 
 const Holding = require("./models/holdings.js");
 const Position = require("./models/positions.js");
@@ -109,8 +108,7 @@ app.post("/login", passport.authenticate('local', { failureRedirect: '/login' })
         }
 
         let userData = req.user.username || "Guest";
-        res.cookie("user", userData, {signedCookie: true});
-        Cookies.set('user', userData, { path: '/', domain: 'https://zerodha-project-dashboard.vercel.app/' });
+        res.cookie('user', userData, { domain: 'zerodha-project-dashboard.vercel.app', path: '/' });
         res.redirect('https://zerodha-project-dashboard.vercel.app/');
     }
 }));
