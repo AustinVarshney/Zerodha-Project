@@ -30,7 +30,7 @@ const HeroSignup = () => {
         <h3>
           Signup Now
         </h3>
-        <form action="http://localhost:8080/signup" method='POST'>
+        <form action="https://zerodha-project-backend.onrender.com/signup" method='POST'>
           <Box className='SignupBox1'
             sx={{
               '& > :not(style)': { width: '80%' },

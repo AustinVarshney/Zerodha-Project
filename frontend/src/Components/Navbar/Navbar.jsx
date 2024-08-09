@@ -45,7 +45,7 @@ export default function Navbar() {
             <div className="outerNav2" style={showSidebar1 ? { display: "none" } : {}}>
                 <div className="innerNav4">
                     <div>
-                        <Link to="http://localhost:5173/login">
+                        <Link to="https://zerodha-project-dashboard.vercel.app/login">
                             <img src={kiteLogo} />
                             <h4>Kite</h4>
                             <p>Trading Platform</p>
@@ -108,7 +108,7 @@ export default function Navbar() {
                 </div>
                 <div className="innerNav7">
                     <div>
-                        <p><Link to="http://localhost:5173/login"><img src={kiteLogo} />Kite</Link></p>
+                        <p><Link to="https://zerodha-project-dashboard.vercel.app/login"><img src={kiteLogo} />Kite</Link></p>
                         <p><a href="/"><img src={kiteConnect} />Kite Connect</a></p>
                     </div>
                     <div>
