@@ -33,7 +33,7 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(MONGODB_URL);
+    await mongoose.connect(DB_URL);
 }
 
 const sessionOptions = {
