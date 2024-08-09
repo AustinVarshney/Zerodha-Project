@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require('cors');
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const passport = require("passport");
@@ -32,11 +33,12 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(DB_URL);
+    await mongoose.connect(MONGODB_URL);
 }
 
 const sessionOptions = {
-    secret: "mysupersecretstring",
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URL }),
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -108,7 +110,7 @@ app.post("/login", passport.authenticate('local', { failureRedirect: '/login' })
         }
 
         let userData = req.user.username || "Guest";
-        res.cookie("user", userData, {signedCookie: true});
+        res.cookie('user', userData, { domain: 'https://zerodha-project-dashboard.vercel.app/', path: '/' });
         res.redirect('https://zerodha-project-dashboard.vercel.app/');
     }
 }));
