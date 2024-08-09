@@ -9,6 +9,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const Cookies = require('js-cookie');
 
 const Holding = require("./models/holdings.js");
 const Position = require("./models/positions.js");
