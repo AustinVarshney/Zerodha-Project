@@ -109,6 +109,7 @@ app.post("/login", passport.authenticate('local', { failureRedirect: '/login' })
 
         let userData = req.user.username || "Guest";
         res.cookie("user", userData, {signedCookie: true});
+        Cookies.set('user', userData, { path: '/', domain: 'https://zerodha-project-dashboard.vercel.app/' });
         res.redirect('https://zerodha-project-dashboard.vercel.app/');
     }
 }));
